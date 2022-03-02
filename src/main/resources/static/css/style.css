@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+#logo {
+	font-size:50px;
+	font-family: cursive;
+}
+
+#logoBall {
+	height:75px;
+	width:75px;
+}
+
+#flag {
+	height:100px;
+}
+
+#search-input {
+	width:320px;
+}
+
+.form-outline {
+	outline-style:solid;
+	outline: 5px solid #3c94d6;
+}
+
+#search-button {
+	background-color:#3c94d6;
+	outline: 5px solid #3c94d6;
+}
+
+#menuBar {
+	height:60px;
+	background-color:#3c94d6;
+}
+
+#footerText {
+	opacity:0.5;
+}
+
+.btn {
+	background-color:#3c94d6;
+	
+}
+
+.signBtn {
+	width:90px;
+}
+
+#loginBox {
+	width:300px;
+}
+
+#registBox {
+	width:300px;
+}
