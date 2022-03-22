@@ -40,7 +40,13 @@
 				location.href = "/user/regist";
 			});
 			
+			$("#logoutBtn").on("click",function(){
+				location.href = "/user/signout";
+			});
+			
 		});
+		
+		
 	</script>
 </body>
 </html>

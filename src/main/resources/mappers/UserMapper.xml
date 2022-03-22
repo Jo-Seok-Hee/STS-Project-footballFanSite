@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.sucky.project.football.dao.userDAO">
+ 
+ 	<insert id="insertUser" parameterType="map">
+ 		
+ 		INSERT INTO `user`
+ 		(
+ 			`loginId`
+ 			, `password`
+ 			, `name`
+ 			, `nickname`
+ 			, `phoneNumber`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		)
+ 		VALUE
+ 		(
+ 			#{loginId}
+ 			, #{password}
+ 			, #{name}
+ 			, #{nickname}
+ 			, #{phoneNumber}
+ 			, now()
+ 			, now()
+ 		)
+
+ 	</insert>
+ 	
+ 	<select id="selectUser" resultType="com.sucky.project.football.model.User">
+ 		
+ 		SELECT
+ 			`id`
+ 			, `loginId`
+ 			, `password`
+ 			, `name`
+ 			, `nickname`
+ 			, `phoneNumber`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`user`
+ 		WHERE
+ 			`loginId` = #{loginId}
+ 			AND `password` = #{password}
+ 	
+ 	</select>
+ 	
+ 	<select id="isDuplicatedId" resultType="int">
+ 		
+ 		SELECT
+ 			COUNT(*)
+ 		FROM
+ 			`user`
+ 		WHERE
+ 			`loginId` = #{loginId}
+ 	
+ 	</select>
+ 
+ 
+ </mapper>

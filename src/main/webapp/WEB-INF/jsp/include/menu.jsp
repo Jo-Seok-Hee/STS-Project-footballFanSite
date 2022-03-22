@@ -17,7 +17,7 @@
 			<a href="#" class="nav-link"><span class="text-white">경기일정</span></a>
 		</li>
 		<li class="nav-item mt-2">
-			<a href="#" class="nav-link"><span class="text-white">자유게시판</span></a>
+			<a href="/post/freeboard" class="nav-link text-white">자유게시판</a>
 		</li>
 		<li class="nav-item mt-2">
 			<a href="#" class="nav-link"><span class="text-white">고객센터</span></a>

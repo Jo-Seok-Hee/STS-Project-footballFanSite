@@ -15,22 +15,23 @@
   	<link rel="stylesheet" href="/css/style.css">
 
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-
-<title>풋볼위아 회원가입</title>
+<title>풋볼위아 로그인</title>
 </head>
 <body>
 	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
-	
+		
+		<%--로그인 박스 --%>
 		<div class="container mt-3 d-flex justify-content-center">
-			<div id="registBox" class="mt-3">
-				<input type="text" id="loginId" class="form-control mt-3" placeholder="아이디">
-				<input type="text" id="password" class="form-control mt-3" placeholder="비밀번호">
-				<input type="text" id="confirmPassword" class="form-control mt-3" placeholder="비밀번호 확인">
-				<input type="text" id="userName" class="form-control mt-3" placeholder="이름">
-				<input type="text" id="nickname" class="form-control mt-3" placeholder="닉네임">
-				<input type="text" id="phoneNumber" class="form-control mt-3" placeholder="전화번호">
-				<button type="button" class="form-control btn mt-3 text-white">회원가입</button>
+		
+			<div id="loginBox" class="mt-3">
+				<input type="text" id="loginIdInput" class="form-control mt-3" placeholder="아이디">
+				
+				<input type="password" id="passwordInput" class="form-control mt-3" placeholder="비밀번호">
+				
+				<label class="mt-3"><a href="#">비밀번호를 잊어버리셨나요?</a></label>
+				
+				<button type="button" class="form-control btn mt-3 text-white" id="loginBtn">로그인</button>
 			</div>
 		</div>
 		<br><br><br><br><br>
@@ -39,5 +40,46 @@
 		</div>	
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>
+	
+	<script>
+	
+		$(document).ready(function(){
+			
+			$("#loginBtn").on("click",function(){
+				let loginId = $("#loginIdInput").val();
+				let password = $("#passwordInput").val();
+				
+				if(loginId == ""){
+					alert("아이디를 입력해주세요.");
+					return ;	
+				}
+				if(password == ""){
+					alert("비밀번호를 입력해주세요.");
+					return ;
+				}
+				
+				
+				
+				$.ajax({
+					//tudse
+					type:"post",
+					url:"/user/signin",
+					data:{"loginId":loginId, "password":password},
+					success:function(data){
+						if(data.result == "success"){
+							
+							location.href = "/footballweare";
+						} else {
+							alert("아이디 또는 비밀번호가 일치하지 않습니다.");
+						}
+					},
+					error:function(){
+						alert("로그인 에러");	
+					}
+				});
+			});
+		});
+	
+	</script>
 </body>
 </html>

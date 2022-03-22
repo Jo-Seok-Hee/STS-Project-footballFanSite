@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sucky.project.football.dao.postDAO">
+	
+	<insert id="insertPost" parameterType="map">
+	
+		INSERT INTO `post`
+		(
+			`userId`
+			,`nickname`
+			,`title`
+			,`content`
+			,`imagePath`
+			,`createdAt`
+			,`updatedAt`
+		)
+		VALUE
+		(
+			#{userId}
+			,#{nickname}
+			,#{title}
+			,#{content}
+			,''
+			,now()
+			,now()
+		)
+	</insert>
+	
+	<select id="selectPostList" resultType="com.sucky.project.football.model.Post">
+	
+		SELECT * 
+		FROM
+			`post`
+		
+		ORDER BY `id` DESC
+	
+	</select>
+	
+	<select id="selectPost" resultType="com.sucky.project.football.model.Post">
+	
+		SELECT * FROM `post`
+		
+		WHERE 
+			`id` = #{postId}
+	
+	
+	</select>
+
+</mapper>
