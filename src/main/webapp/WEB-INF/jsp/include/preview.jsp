@@ -12,14 +12,14 @@
 				<hr>
 				<div class="d-flex">
 					<div class="newsBox w-50 bg-danger">
-						dd
+						1번 뉴스 
 					</div>
 					<div class="newsBox w-50 bg-secondary">
-					
+						2번 뉴스
 					</div>
 				</div>
-				<div class="d-flex justify-content-end">
-					<label><a href="#" class="text-dark">더보기</a></label>
+				<div class="d-flex justify-content-end mt-2">
+					<label><a href="/news/detail" class="text-dark mr-1" style="font-size:16px;">더보기</a></label>
 				</div>
 			</div>
 		
