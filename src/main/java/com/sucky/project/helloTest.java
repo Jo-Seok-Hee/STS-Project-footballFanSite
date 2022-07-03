@@ -10,6 +10,6 @@ public class helloTest {
 	
 	@RequestMapping("/hello")
 	public String test() {
-		return "Hello Sucky";
+		return "Hello Sucky!!!";
 	}
 }
